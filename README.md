@@ -187,3 +187,35 @@ $ git reset --hard 36d521172fad828917cdb9034e46cfb20d5ae59a
 HEAD is now at 36d5211 unstash home and about
 
 ```
+
+## Bundle 2
+
+### Exercise 1
+```bash
+$ git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+$ touch services.html
+$ git add .
+$ git commit -m "create new services file"
+[ft/bundle-2 de5c8b0] create new services file
+ 1 file changed, 11 insertions(+)
+ create mode 100644 services.html
+$ git push
+fatal: The current branch ft/bundle-2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/bundle-2
+
+To have this happen automatically for branches without a tracking
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 429 bytes | 429.00 KiB/s, done.Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/berniceu/gym-git-exercise-solutions/pull/new/ft/bundle-2
+remote:
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+```
