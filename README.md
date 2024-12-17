@@ -385,3 +385,292 @@ $ git checkout main
 Switched to branch 'main'
 Your branch is up to date with 'origin/main'.
 ```
+
+## Bundle 3
+### Exercise 1
+
+```bash
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ touch team.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ git commit -M "create team file"
+error: unknown switch `M'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit        
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer       
+    -t, --[no-]template <file>
+                          use specified template file       
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes
+    -o, --[no-]only       commit only specified files       
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed      
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values  
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL        
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite     
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ git commit -m "create team file"
+[ft/team-page cc111f9] create team file
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ git push
+fatal: The current branch ft/team-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/team-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.  
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ git push --set-upstream origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 416 bytes | 416.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/berniceu/gym-git-exercise-solutions/pull/new/ft/team-page
+remote:
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+ * [new branch]      ft/team-page -> ft/team-page
+branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/contact-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.       
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ git log
+commit cc111f96dae459c9546ad051b528849229157113 (HEAD -> ft/team-page, origin/ft/team-page)
+Author: uwituzeb <b.uwituze@alustudent.com>
+Date:   Tue Dec 17 12:00:11 2024 +0200
+
+    create team file
+
+commit 52a60ca0d44419b153f4d384e71f7b2ee5c87c4a (origin/main, main, ft/contact-page)
+Author: uwituzeb <b.uwituze@alustudent.com>
+Date:   Tue Dec 17 11:53:40 2024 +0200
+
+    add bundle 3 exercise 2 commands
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/contact-page)
+$ git cherry-pick cc111f96dae459c9546ad051b528849229157113
+[ft/contact-page 9118e6a] create team file
+ Date: Tue Dec 17 12:00:11 2024 +0200
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/contact-page)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/contact-page)
+$ git commit -m "contact page"
+[ft/contact-page fb8e7f1] contact page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 contact.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/contact-page)
+$ git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.  
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/contact-page)
+$ git push --set-upstream origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 655 bytes | 655.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/berniceu/gym-git-exercise-solutions/pull/new/ft/contact-page
+remote:
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+ * [new branch]      ft/contact-page -> ft/contact-page     
+branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/contact-page)
+$ git checkout ft/faq-page
+error: pathspec 'ft/faq-page' did not match any file(s) known to git
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/contact-page)
+$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git commit -m "faq page"
+[ft/faq-page c88b5d4] faq page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 faq.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git push
+fatal: The current branch ft/faq-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/faq-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.  
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git push --set-upstream origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 407 bytes | 407.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+Revert "create team file"
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/berniceu/gym-git-exercise-solutions/pull/new/ft/faq-page
+remote:
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.  
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git revert cc111f96dae459c9546ad051b528849229157113       
+[ft/faq-page 1565b45] Revert "create team file"
+ 1 file changed, 11 deletions(-)
+ delete mode 100644 team.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git log
+commit 1565b45cd2ce0180e60416f1a7ea47476fba813b (HEAD -> ft/faq-page)
+Author: uwituzeb <b.uwituze@alustudent.com>
+Date:   Tue Dec 17 12:08:45 2024 +0200
+
+    Revert "create team file"
+
+    This reverts commit cc111f96dae459c9546ad051b528849229157113.
+
+commit c88b5d41d9624a80e1b9243c8736af9c40504dc2 (origin/ft/faq-page)
+Author: uwituzeb <b.uwituze@alustudent.com>
+Date:   Tue Dec 17 12:07:17 2024 +0200
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git commit -m "revert team page"
+On branch ft/faq-page
+Your branch is ahead of 'origin/ft/faq-page' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 272 bytes | 272.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+   c88b5d4..1565b45  ft/faq-page -> ft/faq-page
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+```
