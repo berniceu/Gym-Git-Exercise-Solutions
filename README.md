@@ -219,3 +219,169 @@ To https://github.com/berniceu/gym-git-exercise-solutions.git
  * [new branch]      ft/bundle-2 -> ft/bundle-2
 branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
 ```
+
+### Exercise 2
+
+```bash
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/bundle-2)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 909 bytes | 181.00 KiB/s, done.
+From https://github.com/berniceu/gym-git-exercise-solutions
+   91b4b7d..16d6520  main       -> origin/main
+Updating 91b4b7d..16d6520
+Fast-forward
+ README.md     | 34 +++++++++++++++++++++++++++++++++-
+ services.html | 11 +++++++++++
+ 2 files changed, 44 insertions(+), 1 deletion(-)
+ create mode 100644 services.html
+
+# here I repeated the process because I had not pulled before checking out on a new branch
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+# merged to get the recent changes
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git merge origin main
+merge: origin - not something we can merge
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git merge origin/main
+Updating 91b4b7d..16d6520
+Fast-forward
+ README.md     | 34 +++++++++++++++++++++++++++++++++-
+ services.html | 11 +++++++++++
+ 2 files changed, 44 insertions(+), 1 deletion(-)
+ create mode 100644 services.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git commit -m "new changes to service page"
+[ft/service-redesign ff4d935] new changes to service page
+ 1 file changed, 1 insertion(+)
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign      
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.  
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git push --set-upstream origin ft/service-redesign 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 332 bytes | 332.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/berniceu/gym-git-exercise-solutions/pull/new/ft/service-redesign
+remote:
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git commit -m "new changes"
+[main 5093c94] new changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 314 bytes | 314.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+   16d6520..5093c94  main -> main
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git diff main ft/service-redesign
+diff --git a/services.html b/services.html
+index eba4c38..02d19ff 100644
+--- a/services.html
++++ b/services.html
+@@ -6,6 +6,7 @@
+     <title>Services</title>
+ </head>
+ <body>
+-    <h2>New changes</h2>
++    <h1>Services Page</h1>
++    
+ </body>
+ </html>
+\ No newline at end of file
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git merge main
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign|MERGING)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign|MERGING)
+$ git commit -m "fix conflicts"
+[ft/service-redesign 99f9f6e] fix conflicts
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git push
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 215 bytes | 215.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+   ff4d935..99f9f6e  ft/service-redesign -> ft/service-redesign
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+```
