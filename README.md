@@ -809,3 +809,134 @@ remote: Resolving deltas: 100% (14/14), done.
 To https://github.com/berniceu/git-exercises.git
  * [new branch]      main -> main
 ```
+
+## Exercise 2
+
+```bash
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout ft/footer
+error: pathspec 'ft/footer' did not match any file(s) known to git
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/footer)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/footer)
+$ git commit -m "new footer file"
+[ft/footer e945ca5] new footer file
+ 1 file changed, 11 insertions(+)
+ create mode 100644 footer.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/footer)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/footer)
+$ git commit -m "add footer tag"
+[ft/footer 359da5a] add footer tag
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/footer)
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.  
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/footer)
+$ git push --set-upstream origin ft/footer
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 685 bytes | 685.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/berniceu/gym-git-exercise-solutions/pull/new/ft/footer
+remote:
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+ * [new branch]      ft/footer -> ft/footer
+branch 'ft/footer' set up to track 'origin/ft/footer'.      
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout ft/squashing
+error: pathspec 'ft/squashing' did not match any file(s) known to git
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/squashing)
+$ git merge --squash ft/footer 
+Updating aa8e438..359da5a
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+ create mode 100644 footer.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/squashing)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/squashing)
+$ git commit -m "footer changes squashing"
+[ft/squashing 36ccab7] footer changes squashing
+ 1 file changed, 13 insertions(+)
+ create mode 100644 footer.html
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/squashing)
+$ git log
+commit 36ccab77d4ac99f0b2acbbca86aa8c3697b93b0a (HEAD -> ft/squashing)
+Author: uwituzeb <b.uwituze@alustudent.com>
+Date:   Tue Dec 17 12:34:24 2024 +0200
+
+    footer changes squashing
+
+commit aa8e438c2f25241c3f24f6029feae4615d553a1c (origin/main, main)
+Author: uwituzeb <b.uwituze@alustudent.com>
+Date:   Tue Dec 17 12:29:30 2024 +0200
+
+    update readme with new exercise
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/squashing)
+$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.  
+
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/squashing)
+$ git push --set-upstream origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 432 bytes | 432.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/berniceu/gym-git-exercise-solutions/pull/new/ft/squashing
+remote:
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+```
