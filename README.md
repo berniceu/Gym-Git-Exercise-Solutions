@@ -674,3 +674,93 @@ $ git checkout main
 Switched to branch 'main'
 Your branch is up to date with 'origin/main'.
 ```
+
+### Exercise 2
+
+```bash
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+Your branch is up to date with 'origin/ft/faq-page'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git commit -m "add h1 in home file"
+[main 752e18e] add h1 in home file
+ 1 file changed, 1 insertion(+)
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+   3c402f9..752e18e  main -> main
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+Your branch is up to date with 'origin/ft/home-page-redesign'.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/home-page-redesign)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/home-page-redesign)
+$ git add .
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/home-page-redesign)
+$ git commit-m "new changes to home"
+git: 'commit-m' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit-tree
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/home-page-redesign)
+$ git commit -m "new changes to home"
+[ft/home-page-redesign abc01b5] new changes to home
+ 1 file changed, 1 insertion(+)
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/home-page-redesign)
+$ git push
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+ ! [rejected]        ft/home-page-redesign -> ft/home-page-r
+Merge branch 'ft/home-page-redesign' of https://github.com/bedesign (non-fast-forward)
+error: failed to push some refs to 'https://github.com/berniceu/gym-git-exercise-solutions.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/home-page-redesign)
+$ git pull
+Merge made by the 'ort' strategy.
+
+HOSA.LTD@DESKTOP-JOJFIGL MINGW64 ~/gym-git-exercise-solutions (ft/home-page-redesign)
+$ git push
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (13/13), 1.50 KiB | 512.00 KiB/s, done.
+Total 13 (delta 7), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (7/7), completed with 2 local objects.
+To https://github.com/berniceu/gym-git-exercise-solutions.git
+   1565b45..3927764  ft/home-page-redesign -> ft/home-page-redesign
+
+```
